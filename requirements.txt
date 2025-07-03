@@ -1,0 +1,3 @@
+pip install flask flask-mysqldb
+pip install python-dotenv
+pip install pyodbc

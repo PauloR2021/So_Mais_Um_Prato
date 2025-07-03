@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style_cadastro.css">
+    <title>StockSys - Sistema de Estoque - Cadastrar Produtos</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="nav-buttons">
+            <a href="/">Início</a>
+            <a href="/consulta">Consultar Produtos</a>
+        </div>
+    </header>
+    <main>
+        <h1>Cadastrar Produto</h1>
+        <div class="container">
+            <form action="/cadastrar" method="POST">
+                <label for="nome">Nome do Produto: </label>
+                <input type="text" id="nome" name="nome" required autocomplete="off">
+
+                <label for="codigo">Código do Produto: </label>
+                <input type="text" id="codigo" name="codigo" placeholder="AAAA00" required autocomplete="off">
+
+                <label for="descricao">Descrição do Produto: </label>
+                <textarea id="descricao" name="descricao" rows="6"></textarea>
+
+                <label for="valor">Valor do Produto: </label>
+                <input type="text" id="valor-produto" name="valor-produto" placeholder="R$ 00,00" required autocomplete="off">
+
+                <label for="valor-revenda">Valor da Revenda: </label>
+                <input type="text" id="valor-revenda" name="valor-revenda" placeholder="R$ 00,00" required autocomplete="off"> 
+
+                <label for="uni">Unidade: </label>
+                <select name="unidade" id="unidade">
+                    <option value="un" id="un">Unidade (UN)</option>
+                    <option value="lt" id="lt">Litro (L)</option>
+                    <option value="ml" id="ml">Mililitro (ML)</option>
+                </select>
+
+                <label for="quantidade">Quantidade no Estoque: </label>
+                <input type="number" id="quantidade" name="quantidade" min="0" autocomplete="off">
+
+                <label for="imagem">Imagem do Produto: </label>
+                <input type="text" id="imagem" name="imagem" autocomplete="off">
+
+                <button type="submit">Cadastrar</button>
+                
+            </form>
+
+        </div>
+    </main>
+    <footer style="text-align: center; font-size: 14px; color: #777; margin-top: 20px;">
+        <p>&copy; 2025 Sistema de Produtos com Flask. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Paulo Ricardo com Python, Flask e MySQL</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Só Mais Um Prato - Login</title>
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="nav-login">
+      <a href="/">Iníco</a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Login</h2>
+    <div class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+          <p style="color: red;">{{ message }}</p>
+        {% endfor %}
+      {% endwith %}
+
+      <form method="POST">
+          <label>Email:</label><br>
+          <input type="email" name="email"><br>
+          <label>Senha:</label><br>
+          <input type="password" name="senha"><br><br>
+          <button type="submit">Entrar</button>
+      </form>
+
+    </div>
+  </main>
+  <footer style="text-align: center; font-size: 14px; color: #777; margin-top: 20px;">
+    <p>&copy; 2025 Sistema de Produtos com Flask. Todos os direitos reservados.</p>
+    <p>Desenvolvido por Paulo Ricardo com Python, Flask e MySQL.</p>
+  </footer>
+
+    
+    
+</body>
+</html>

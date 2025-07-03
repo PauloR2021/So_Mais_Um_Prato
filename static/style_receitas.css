@@ -1,0 +1,30 @@
+.receita-card {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, border-color 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.receita-card:hover {
+    transform: scale(1.02);
+    border-color: #ff7b00;
+}
+
+.receita-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ccc;
+}
+
+.receita-info {
+    padding: 10px;
+}
+
+.receita-info h3 {
+    margin: 5px 0;
+}

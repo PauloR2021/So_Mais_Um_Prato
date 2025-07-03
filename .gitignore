@@ -1,0 +1,5 @@
+#Ignorando o Arquivo ENV com informações do Banco de Dados
+.env
+
+# Ignorando Algumas Pastas
+__pycache__

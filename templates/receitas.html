@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Só Mais Um Prato - Receitas</title>
+    <link rel="stylesheet" href="/static/style_receitas.css">
+</head>
+<body>
+    <header>
+        <div class="nav-login">
+            <a href="/login">Login</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Receitas</h1>
+        <div class="container">
+            <form method="GET" action="">
+                <label for="nome">Buscar Receita: </label>
+                <input type="text" name="nome" if="nome" placeholder="Digite o Nome da Receita">
+                <button type="submit">Buscar</button>
+            </form>
+
+            {% for receita in receitas %}
+            <div>
+                <a href="">
+                    <img src="{{receita.IMAGEM}}" alt="{{ receita.NOME}}" style="width: 100%; height: auto;"">
+                </a>
+            </div>
+
+            <div>
+                <p>RECEITAS</p>
+                <h3>{{receita.NOME_RECEITA}}</h3>
+                 <p><span>🕒</span> {{ receita.TEMPO_PREPARO }} min</p>
+            </div>
+
+            {% endfor %}
+
+           
+
+        </div>
+    </main>
+
+
+    <footer style="text-align: center; font-size: 14px; color: #777; margin-top: 20px;">
+        <p>&copy; 2025 Sistema de Produtos com Flask. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Paulo Ricardo com Python, Flask e MySQL.</p>
+  </footer>
+    
+</body>
+</html>
