@@ -68,10 +68,28 @@ def todas_receitas_busca(busca:str):
     
     return receitas
     
+def todas_receitas_buscar_id(id:int):
+    conn = conexao()
+    cursor = conn.cursor()
+    string_sql = "SELECT * FROM PROJETOS_PYTHON.dbo.SO_MAIS_UM_PRATO_RECEITAs WHERE ID = ?;"
+    cursor.execute(string_sql, (id,))
+    row = cursor.fetchone()
 
+    if row is None:
+        return None
+
+    # Pegando os nomes das colunas
+    columns = [column[0] for column in cursor.description]
+
+    # Convertendo a tupla para dicionário
+    receita = dict(zip(columns, row))
+
+    
+    return receita
+    
 
 
 if __name__ == "__main__":
-    teste = login_usuario('paulo@admin.com','@Pr_16112001')
+    teste = todas_receitas_buscar_id(1)
     
     print(teste)

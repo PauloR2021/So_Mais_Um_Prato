@@ -11,8 +11,6 @@ app.permanent_session_lifetime = timedelta(minutes=30)
 def index():
     return render_template('index.html')
 
-
-
 # Rota de Login - Utilizada para Fazer Login
 @app.route('/login', methods=['GET','POST'])
 def login():
@@ -33,7 +31,7 @@ def login():
     return render_template('login.html')  # GET request (abrir o formulário)
 
 
-#Rota para Logou - Encessa a Sessão Criada pelo Usuário
+#Rota para Logout - Encessa a Sessão Criada pelo Usuário
 @app.route('/logout')
 def logout():
     session.clear()
@@ -52,8 +50,8 @@ def admin():
         return redirect('/login')
 
 # Página de listagem de receitas + busca por nome
-@app.route('/receitas')
-def receitas():
+@app.route('/receita')
+def listar_receitas():
     nome_busca = request.args.get('nome')
 
     if nome_busca:
@@ -63,17 +61,18 @@ def receitas():
 
     return render_template('receitas.html', receitas=receitas)
 
-
-"""
-# Página de detalhes de uma receita específica
 @app.route('/receita/<int:id>')
-def detalhes_receita(id):
-    receita = buscar_receita_por_id(id)
-    if receita:
-        return render_template('detalhes.html', receita=receita)
+def visualizar_receitas(id):
+    receita = todas_receitas_buscar_id(id)
+    
+    if receita :
+        # Divide os textos em listas (ajuste conforme seu banco)
+        receita['INGREDIENTES'] = receita['INGREDIENTES'].split('|')  # ou .split(', ')
+        receita['MODO_PREPARO'] = receita['MODO_PREPARO'].split('|')  # ou .split('. ')
+        return render_template('detalhes_receita.html', receita = receita)
     else:
-        flash("Receita não encontrada.", "error")
-        return redirect(url_for('receitas'))"""
+        return "Receita não encontrada", 404
+
 
 if __name__ == '__main__':
     app.run(debug=True)

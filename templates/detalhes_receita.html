@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Só Mais Um Prato - Detalhes da Receita</title>
+</head>
+<body>
+    <header>
+        <div class="nav-login">
+            <a href="/login">Login</a> 
+        </div>
+        <div class="nav-buttons">
+            <a href="/receita">Receitas</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+         
+                <h1>{{receita.NOME_RECEITA}}</h1>
+        
+
+                <div class="tempo-redimento">
+                    <div>⏱ {{ receita.TEMPO_PREPARO }} min</div>
+                    <div>🍽 {{ receita.PORCOES }} porções</div>
+                </div>
+
+                <div class="imagem-receita">
+                    <img src="{{receita.IMAGEM}}" alt="{{receita.NOME_RECEITA}}">
+                </div>
+
+                <div class="conteudo">
+                <div class="ingredientes">
+                    <h2>Ingredientes</h2>
+                    <ul>
+                        {% for item in receita.INGREDIENTES %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="modo-preparo">
+                    <h2>Modo de Preparo</h2>
+                    <ol>
+                        {% for passo in receita.MODO_PREPARO %}
+                            <li>{{ passo }}</li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+           
+
+        </div>
+    </main>
+    
+</body>
+</html>

@@ -18,28 +18,23 @@
         <div class="container">
             <form method="GET" action="">
                 <label for="nome">Buscar Receita: </label>
-                <input type="text" name="nome" if="nome" placeholder="Digite o Nome da Receita">
+                <input type="text" name="nome" i="nome" placeholder="Digite o Nome da Receita">
                 <button type="submit">Buscar</button>
             </form>
-
-            {% for receita in receitas %}
-            <div>
-                <a href="">
-                    <img src="{{receita.IMAGEM}}" alt="{{ receita.NOME}}" style="width: 100%; height: auto;"">
-                </a>
-            </div>
-
-            <div>
-                <p>RECEITAS</p>
-                <h3>{{receita.NOME_RECEITA}}</h3>
-                 <p><span>🕒</span> {{ receita.TEMPO_PREPARO }} min</p>
-            </div>
-
-            {% endfor %}
-
-           
-
         </div>
+
+        <div class="receita-card">
+            {% for receita in receitas %}
+            <a href="/receita/{{ receita.ID }}">
+                <img src="{{receita.IMAGEM}}" alt="{{receita.NOME_RECEITA}}">
+                <div class="receita-info">
+                    <p class="categoria">RECEITAS</p>
+                    <h3>{{receita.NOME_RECEITA}}</h3>
+                    <p class="tempo"><span>🕒</span> {{receita.TEMPO_PREPARO}} min</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>   
     </main>
 
 
