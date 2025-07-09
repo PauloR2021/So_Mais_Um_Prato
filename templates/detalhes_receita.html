@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Só Mais Um Prato - Detalhes da Receita</title>
+    <link rel="stylesheet" href="/static/style_detalhes_receitas.css">
 </head>
 <body>
     <header>
@@ -23,8 +24,8 @@
         
 
                 <div class="tempo-redimento">
-                    <div>⏱ {{ receita.TEMPO_PREPARO }} min</div>
-                    <div>🍽 {{ receita.PORCOES }} porções</div>
+                    <div>⏱ {{ receita.TEMPO_PREPARO }}</div>
+                    <div>🍽 {{ receita.PORCOES }} Porções</div>
                 </div>
 
                 <div class="imagem-receita">
@@ -55,5 +56,9 @@
         </div>
     </main>
     
+    <footer style="text-align: center; font-size: 14px; color: #777; margin-top: 20px;">
+        <p>&copy; 2025 Sistema de Produtos com Flask. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Paulo Ricardo com Python, Flask e MySQL.</p>
+    </footer>
 </body>
 </html>

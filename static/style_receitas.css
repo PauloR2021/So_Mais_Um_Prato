@@ -1,21 +1,67 @@
+:root{
+    --cor-background-body: #FFF8F0;
+    --cor-color-body: #3D2C2E;
+    --cor-background-header: #E76F51;
+    --cor-color-h1: #2A9D8F;
+    --cor-background-button: #E76F51;
+    --cor-background-hutton-hover: #d65e45;
+    --cor-background-footer: #F0EDE6;
+    --cor-color-footer: #7D7D7D;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-background-body);
+    color: var(--cor-color-body);
     margin: 0;
     padding: 0;
 }
-
+/*Cabeçalho*/
 header {
+    background-color: var(--cor-background-header);
+    color: white;
     padding: 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    display: flex;   
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
-.nav-login {
-    text-align: right;
-    margin-right: 30px;
+.nav-login a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+.nav-login a:hover{
+    text-decoration: underline;
 }
 
+.nav-buttons a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+.nav-buttons a:hover{
+    text-decoration: underline;
+}
+
+main{
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+main h1{
+    color: var(--cor-color-h1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+/*
 .container {
     max-width: 1200px;
     margin: 40px auto;
@@ -23,14 +69,43 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
-}
-
+}*/
+/*Formulário*/
 form {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
 }
 
+form input[type="text"]{
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 300px;
+    
+}
+
+form button{
+    padding: 10px 20px;
+    background-color: var(--cor-background-button);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor:pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover{
+    background-color: var(--cor-background-hutton-hover);
+}
+
+/*Card Receita*/
 .receita-card {
     background-color: #fff;
     width: 250px;
@@ -42,7 +117,7 @@ form {
 }
 
 .receita-card:hover {
-    transform: scale(1.03);
+    transform: scale(1.10);
 }
 
 .receita-card img {
@@ -71,4 +146,14 @@ form {
 .receita-info .tempo {
     font-size: 14px;
     color: #777;
+}
+
+/*Rodapé*/
+footer {
+    background-color: var(--cor-background-footer);
+    padding: 20px;
+    font-size: 14px;
+    color: var(--cor-color-footer);
+    text-align: center;
+    margin-top: 40px;
 }

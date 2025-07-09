@@ -1,0 +1,113 @@
+:root{
+    --cor-background-body: #FFF8F0;
+    --cor-color-body: #3D2C2E;
+    --cor-background-header: #E76F51;
+    --cor-color-h1-main: #2A9D8F;
+    --cor-color-preparo-h2: #E76F51;
+    --cor-bakcground-ul-ol: #F8F4EF;
+    
+
+}
+
+/*Fundo Geral*/
+body{
+    background-color: var(--cor-background-body);
+    color:var(--cor-color-body);
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*Cabeçalho*/
+
+header{
+    background-color: var(--cor-background-header);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-login a,
+.nav-buttons a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+.nav-login a:hover,
+.nav-buttons a:hover{
+    text-decoration: underline;
+}
+
+/*Main*/
+main{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+} 
+
+main h1{
+    color: var(--cor-color-h1-main);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/*Tempo e rendimento*/
+.tempo-redimento{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #555;
+}
+
+/*Imagem da Receita*/
+.imagem-receita{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.imagem-receita img{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/*Ingredientes e Modo de Preparo*/
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ingredientes h2,
+.modo-preparo h2{
+    color:var(--cor-color-preparo-h2);
+    margin-bottom: 10px;
+}
+
+.ingredientes ul,
+.modo-preparo ol{
+    background-color: var(--cor-bakcground-ul-ol);
+    padding: 20px;
+    border-radius: 10px;
+    list-style-position: inside;
+    line-height: 1.6;
+}
+
+/*Rodape*/
+footer {
+    background-color: #F0EDE6;
+    padding: 20px;
+    font-size: 14px;
+    color: #7D7D7D;
+    text-align: center;
+    margin-top: 40px;
+}
