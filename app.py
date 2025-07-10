@@ -30,7 +30,6 @@ def login():
 
     return render_template('login.html')  # GET request (abrir o formulário)
 
-
 #Rota para Logout - Encessa a Sessão Criada pelo Usuário
 @app.route('/logout')
 def logout():
@@ -73,6 +72,10 @@ def visualizar_receitas(id):
     else:
         return "Receita não encontrada", 404
 
+
+@app.route('/cadastrar')
+def tela_cadastrar():
+    return render_template('formulario.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
