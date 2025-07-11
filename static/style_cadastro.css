@@ -1,0 +1,69 @@
+:root{
+    --cor-background-body: #FFF8F0;
+    --cor-color-body: #3D2C2E;
+    --cor-background-cabecalho: #E76F51;
+    --cor-background-h1: #2A9D8F;
+    --cor-background-footer: #F0EDE6;
+    --cor-color-footer: #7D7D7D;
+
+
+}
+
+body{
+    background-color: var(--cor-background-body);
+    color: var(--cor-color-body);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*Cabeçalho*/
+.cabecalho{
+    background-color: var(--cor-background-cabecalho);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Navegação*/
+.nav-logout a,
+.nav-buttons a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.nav-logout a:hover,
+.nav-buttons a:hover{
+    text-decoration: underline;
+}
+
+/*Conteudo Principal*/
+
+main{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0,0, 0.05);
+}
+
+h1{
+    color: var(--cor-background-h1);
+    text-align: center;
+
+}
+
+
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-background-footerd);
+    padding: 20px;
+    font-size: 14px;
+    color: var(--cor-color-footer);
+}
