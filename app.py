@@ -77,5 +77,23 @@ def visualizar_receitas(id):
 def tela_cadastrar():
     return render_template('formulario.html')
 
+@app.route('/cadastar/receita',methods=['POST'])
+def adicionar_receitas():
+    nome:str = request.form['nome']
+    ingredientes:str = request.form['ingredientes']
+    tempo:int = request.form['tempo']
+    porcoes:int = request.form['porcoes']
+    preparo:str = request.form['preparo']
+    imagem:str = request.form['foto']
+    
+    ingredientes_formatado = '|'.join(ingredientes.strip().splitlines())
+    preparo_formatado = '|'.join(preparo.strip().splitlines())
+    print(ingredientes_formatado)
+    
+    cadastrar_receitas(nome,ingredientes_formatado,tempo,porcoes,preparo_formatado,imagem)
+    flash("✅ Produto cadastrado com sucesso!")
+    return redirect('/admin')
+    
+    
 if __name__ == '__main__':
     app.run(debug=True)

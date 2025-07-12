@@ -5,6 +5,8 @@
     --cor-background-h1: #2A9D8F;
     --cor-background-footer: #F0EDE6;
     --cor-color-footer: #7D7D7D;
+    --cor-background-input: #28a745;
+    --cor-background-input-hover:#218838;
 
 
 }
@@ -58,6 +60,37 @@ h1{
 
 }
 
+/* Formulário */ 
+label{
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+}
+input[type="text"],
+input[type="number"],
+textarea{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+textarea{
+    resize: vertical;
+    height: 100px;
+}
+button[type="submit"]{
+    margin-top: 20px;
+    margin-left: 350px;
+    padding: 10px 20px;
+    background-color: var(--cor-background-input);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+    background-color: var(--cor-background-input-hover);
+}
 
 
 /* Rodapé */

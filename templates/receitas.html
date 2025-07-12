@@ -19,16 +19,8 @@
     <main>
         <h1>Receitas</h1>
         <div class="container">
-            <form method="GET" action="">
-                <label for="nome">Buscar Receita: </label>
-                <input type="text" name="nome" id="nome" placeholder="Digite o Nome da Receita">
-                <button type="submit">Buscar</button>
-            </form>
-        </div>
-
-        <div class="receita-card">
             {% for receita in receitas %}
-            <a href="/receita/{{ receita.ID }}">
+            <a href="/receita/{{ receita.ID }}" class="receita-card">
                 <img src="{{receita.IMAGEM}}" alt="{{receita.NOME_RECEITA}}">
                 <div class="receita-info">
                     <p class="categoria">RECEITAS</p>
@@ -37,7 +29,9 @@
                 </div>
             </a>
             {% endfor %}
-        </div>   
+        </div>
+
+        
     </main>
 
 

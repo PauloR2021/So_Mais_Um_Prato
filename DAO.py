@@ -86,7 +86,25 @@ def todas_receitas_buscar_id(id:int):
 
     
     return receita
-    
+
+def cadastrar_receitas(nome:str,ingredientes:str,tempo:int,porcoes:int,preparo:str,imagem:str):
+    try:
+        
+        cursor = conexao().cursor()
+        
+        string_sql =f"""
+                        INSERT INTO PROJETOS_PYTHON.dbo.SO_MAIS_UM_PRATO_RECEITAS
+                        (NOME_RECEITA, INGREDIENTES, TEMPO_PREPARO, PORCOES, MODO_PREPARO, IMAGEM)
+                        VALUES('{nome}', '{ingredientes}', {tempo}, {porcoes}, '{preparo}', '{imagem}');
+                    """
+        cursor.execute(string_sql)
+        cursor.commit()
+        
+        cursor.close()
+        conexao().close()
+    except Exception as e :
+        print(e)
+        
 
 
 if __name__ == "__main__":

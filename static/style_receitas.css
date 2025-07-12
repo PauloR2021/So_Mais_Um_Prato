@@ -105,6 +105,13 @@ form button:hover{
     background-color: var(--cor-background-hutton-hover);
 }
 
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* ou 'space-between' */
+    gap: 20px;
+}
+
 /*Card Receita*/
 .receita-card {
     background-color: #fff;
